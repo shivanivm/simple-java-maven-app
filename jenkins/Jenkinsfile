@@ -3,8 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                LANG=en_US.UTF-8
-                sh 'mvn -B -DskipTests clean package'
+                sh "mvn clean install '-Denforcer.skip'"
             }
         }
         stage('Test') {
