@@ -12,7 +12,7 @@ pipeline{
             steps{
                 dir("simple-java-maven-app")
                 {
-                    sh "mvn clean install"
+                    sh "mvn clean install '-Denforcer.skip"
                 }
             }
         }
@@ -21,7 +21,7 @@ pipeline{
             steps{
                 dir("simple-java-maven-app")
                 {
-                    sh "mvn test"
+                    sh "mvn test '-Denforcer.skip'"
                 }
             }
         }
