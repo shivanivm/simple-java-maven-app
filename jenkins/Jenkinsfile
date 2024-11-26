@@ -1,36 +1,35 @@
 pipeline{
     agent any
-    stages {
-        stage("Clean Up")
-        {
-            steps{
-                deleteDir()
+        stages{
+            stage("Stage 1")
+            {
+                steps{
+                    echo "I am in stage 1"
+                }
             }
-        }
-        stage("Build")
-        {
-            steps{
-                dir("simple-java-maven-app")
-                {
-                    sh "mvn clean install '-Denforcer.skip'"
+            stage("Stage 2")
+            {
+                steps{
+                    echo "I am in stage 2"
+                }
+            }
+            stage("Stage 3")
+            {
+                steps{
+                    echo "I am in stage 3"
+                }
+            }
+            stage("Stage 4")
+            {
+                steps{
+                    echo "I am in stage 4"
+                }
+            }
+            stage("Stage 5")
+            {
+                steps{
+                    echo "I am in stage 5"
                 }
             }
         }
-        stage("Test")
-        {
-            steps{
-                dir("simple-java-maven-app")
-                {
-                    sh "mvn test '-Denforcer.skip'"
-                }
-            }
-        }
-        stage("End")
-        {
-            steps{
-                echo "Test is ended"
-            }
-        }
-        
-    }
 }
