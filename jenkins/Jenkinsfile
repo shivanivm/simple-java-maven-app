@@ -25,5 +25,12 @@ pipeline{
                 }
             }
         }
+        stage("End")
+        {
+            steps{
+                echo "Test is ended"
+            }
+        }
+        
     }
 }
